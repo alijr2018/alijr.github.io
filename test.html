@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rami Abdelali - Mechanical Engineer & Full Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #00d4ff;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00d4ff;
+            color: #0a0a0a;
+            border-radius: 5px;
+            font-weight: 700;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0099cc;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.9);
+            padding: 15px 20px;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            color: #ffffff;
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+        #hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        #hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        #hero .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* About Section */
+        #about {
+            text-align: center;
+        }
+        #about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Skills Section */
+        #skills {
+            text-align: center;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .skill-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+        .skill-list {
+            list-style: none;
+        }
+        .skill-list li {
+            margin: 5px 0;
+            padding: 5px 10px;
+            background-color: #00d4ff;
+            color: #0a0a0a;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        /* Experience Section */
+        #experience {
+            text-align: center;
+        }
+        .timeline {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background-color: #00d4ff;
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            margin: 40px 0;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 10px;
+            height: 10px;
+            background-color: #00d4ff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-content {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 60px;
+        }
+
+        /* Education Section */
+        #education {
+            text-align: center;
+        }
+        .education-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        /* Projects Section */
+        #projects {
+            text-align: center;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .project-card a {
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00d4ff;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            #hero h1 {
+                font-size: 2rem;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item::before {
+                left: 20px;
+            }
+            .timeline-content {
+                margin-left: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+</nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Rami Abdelali</h1>
+        <p>Mechanical Engineer | Full Stack Developer | Student at 1337 (42 Network)</p>
+        <p>Passionné par la conception mécanique et le développement logiciel.</p>
+        <div class="buttons">
+            <a href="[Your CV Download Link, e.g., https://drive.google.com/your-cv.pdf]" class="btn">📄 Download CV</a>
+            <a href="#contact" class="btn">📩 Contact Me</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <img src="[Your Photo URL, e.g., https://example.com/photo.jpg]" alt="Rami Abdelali">
+        <p>Passionné par la conception mécanique et le développement logiciel, je maîtrise AutoCAD, SolidWorks, Catia ainsi que les langages C, Python et JavaScript. Actuellement étudiant à 1337 (réseau 42) et certifié en Full Stack Software Engineering (ALX), je suis à la recherche de nouvelles opportunités professionnelles dans le domaine de l’ingénierie et du développement.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Mechanical</h3>
+                <ul class="skill-list">
+                    <li>AutoCAD</li>
+                    <li>SolidWorks</li>
+                    <li>Catia</li>
+                    <li>CNC Programming</li>
+                </ul>
+            </div>
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <ul class="skill-list">
+                    <li>C / C++</li>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>SQL</li>
+                    <li>HTML / CSS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2024 – OCP (Final Project Internship)</h3>
+                    <p>Design of a compaction machine.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h3>2022 – OCP Internship (1 month)</h3>
+                    <p>Machine parts creation, Industrial design (AutoCAD, SolidWorks).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>2023–Present</h3>
+            <p>Software Engineering – 1337 (42 Network)</p>
+        </div>
+        <div class="education-item">
+            <h3>2023–2024</h3>
+            <p>Full Stack Software Engineering – ALX (Holberton)</p>
+        </div>
+        <div class="education-item">
+            <h3>2023–2024</h3>
+            <p>Licence fondamentale – Sciences de la matière physique</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Web API Project</h3>
+                <p>A full-stack web application with REST API.</p>
+                <p><strong>Technologies:</strong> Python, JavaScript, SQL</p>
+                <a href="https://github.com/alijr2018" class="btn">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>CNC Mechanical Project</h3>
+                <p>Programming and design for CNC machining.</p>
+                <p><strong>Technologies:</strong> AutoCAD, SolidWorks, CNC</p>
+				<a href="https://github.com/alijr2018" class="btn">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Compaction Machine (Final Year)</h3>
+                <p>Design and simulation of a mechanical compaction system.</p>
+                <p><strong>Technologies:</strong> Catia, SolidWorks</p>
+				<a href="https://github.com/alijr2018" class="btn">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Let's connect! Reach out via email or LinkedIn.</p>
+        <form action="YOUR_FORMSPREE_ENDPOINT" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p>Email: [your.email@example.com] | LinkedIn: [https://linkedin.com/in/yourprofile] | GitHub: [https://github.com/yourusername]</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Rami Abdelali. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0;
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
